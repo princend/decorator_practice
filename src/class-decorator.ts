@@ -7,6 +7,7 @@ function decorator1(target: any) {
 function decorator2(target: any) {
     console.log('this is decorator2');
     console.log(target);
+    console.log(typeof (target));
 }
 
 
@@ -16,11 +17,14 @@ function decorator2(target: any) {
 @decorator1
 @decorator2
 export class A {
+
+    name = 'john cena';
     constructor() {
         console.log('this is class A');
     }
 }
 
 
-new A();
+var idetify = new A();
+console.log(idetify.name);
 
